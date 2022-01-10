@@ -321,7 +321,7 @@ else
 fi
 
 ## Temporary colors.js fix
-sed -i 's|colors\": \"^1.4.0\"||' package.json
+sed -i 's|\"colors\": \"^1.4.0\",||' package.json
 
 echo -n "Executing npm install: "
 
