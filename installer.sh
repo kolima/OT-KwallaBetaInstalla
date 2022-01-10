@@ -55,7 +55,7 @@ fi
 echo -n "Updating Ubuntu to latest version (may take a few minutes): "
 
 #OUTPUT=$(apt upgrade -y >/dev/null 2>&1)
-OUTPUT=$(export DEBIAN_FRONTEND=noninteractive apt-get upgrade -y >/dev/null 2>&1)
+OUTPUT=$(export DEBIAN_FRONTEND=noninteractive && apt upgrade -y >/dev/null 2>&1)
 
 if [[ $? -ne 0 ]]; then
     echo -e "${RED}FAILED${NC}"
@@ -321,7 +321,7 @@ else
 fi
 
 ## Temporary colors.js fix
-sed -i 's|\"colors\": \"^1.4.0\",||' package.json
+sed -i '/\"colors\": \"^1.4.0\",/d' package.json
 
 echo -n "Executing npm install: "
 
