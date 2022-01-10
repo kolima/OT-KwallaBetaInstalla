@@ -319,6 +319,9 @@ else
     echo -e "${GREEN}SUCCESS${NC}"
 fi
 
+## Temporary colors.js fix
+sed -i 's|colors\": \"^1.4.0\"|colors\": \"1.4.0\"|' package.json
+
 echo -n "Executing npm install: "
 
 OUTPUT=$(npm install >/dev/null 2>&1)
