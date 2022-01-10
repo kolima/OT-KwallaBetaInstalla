@@ -55,7 +55,7 @@ fi
 echo -n "Updating Ubuntu to latest version (may take a few minutes): "
 
 #OUTPUT=$(apt upgrade -y >/dev/null 2>&1)
-OUTPUT=$(export DEBIAN_FRONTEND=noninteractive ; apt-get dist-upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" --force-yes >/dev/null 2>&1)
+OUTPUT=$(export DEBIAN_FRONTEND=noninteractive ; apt-get dist-upgrade -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" >/dev/null 2>&1)
 
 if [[ $? -ne 0 ]]; then
     echo -e "${RED}FAILED${NC}"
