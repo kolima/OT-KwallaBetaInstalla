@@ -220,7 +220,7 @@ fi
 
 echo -n "Creating a local operational database: "
 
-mysql -u root  -e "CREATE DATABASE operationaldb /*\!40100 DEFAULT CHARACTER SET utf8 */;"
+mysql -u root -e "CREATE DATABASE operationaldb /*\!40100 DEFAULT CHARACTER SET utf8 */;"
 if [[ $? -ne 0 ]]; then
     echo -e "${RED}FAILED${NC}"
     echo "There was an error creating the database (Step 1 of 3)."
